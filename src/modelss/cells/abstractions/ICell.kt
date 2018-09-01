@@ -1,0 +1,7 @@
+package modelss.cells.abstractions
+
+interface ICell {
+    val rowIndex: Int
+    val columnName: String
+    var value: Any
+}
