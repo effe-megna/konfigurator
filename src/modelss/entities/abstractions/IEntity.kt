@@ -1,6 +1,7 @@
 package modelss.entities.abstractions
 
 import modelss.columns.abstractions.IColumn
+import modelss.rows.EntityRow
 import modelss.rows.abstractions.IEntityRow
 
 interface IEntity {
@@ -9,12 +10,10 @@ interface IEntity {
     val description: String
     val columns: List<IColumn>
     val rowSelected: IEntityRow?
-/*
-    fun containColumn(key: String): Boolean
-    fun getColumnByName(key: String): IColumn
-    fun getColumnKey(): IColumn
-*/
-    fun selectRowByKey(key: String)
+
+    fun getRowByKey(key: String): IEntityRow?
+    fun selectRowByKey(row: IEntityRow)
+    fun deselectRows()
 
     enum class EntityType {
         List,

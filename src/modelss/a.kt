@@ -1,6 +1,7 @@
 package modelss
 
 import modelss.entities.abstractions.IEntity
+import modelss.rows.RuleRow
 import modelss.rules.DecisionRule
 import modelss.rules.abstractions.IRule
 
@@ -10,7 +11,6 @@ interface Engine {
 
     fun getEntity(name: String): IEntity?
     fun getRule(name: String): IRule?
-    fun executeDecisionRule(rule: DecisionRule)
 }
 
 class Kengine(
@@ -21,8 +21,4 @@ class Kengine(
     override fun getEntity(name: String): IEntity? = entities.singleOrNull{ it.name == name }
 
     override fun getRule(name: String): IRule? = rules.singleOrNull { it.name == name }
-
-    override fun executeDecisionRule(rule: DecisionRule) {
-
-    }
 }

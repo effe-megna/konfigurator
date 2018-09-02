@@ -11,6 +11,17 @@ data class StringEntity(
         override val description: String,
         override val columns: List<IColumn>
 ) : IStringEntity {
+    override fun deselectRows() {
+        if (row.isSelected)
+            row.isSelected = false
+    }
+
+    override fun getRowByKey(key: String): IEntityRow? = if (row.key == key) row else null
+
+    override fun selectRowByKey(row: IEntityRow) {
+        row.isSelected = true
+    }
+
     override val type: IEntity.EntityType = IEntity.EntityType.String
 
     override val rowSelected: IEntityRow?

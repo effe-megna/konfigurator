@@ -4,5 +4,5 @@ import modelss.columns.KeyColumn
 
 interface IRuleRow : IRow {
     val columns: List<KeyColumn>
-    val isActive: Boolean
+    var isActive: Boolean
 }

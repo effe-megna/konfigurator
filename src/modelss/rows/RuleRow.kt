@@ -8,7 +8,7 @@ data class RuleRow(
         override val index: Int,
         override val cells: List<ICell>,
         override val columns: List<KeyColumn>,
-        override val isActive: Boolean
+        override var isActive: Boolean
 ) : IRuleRow {
 
     override fun toString(): String {
