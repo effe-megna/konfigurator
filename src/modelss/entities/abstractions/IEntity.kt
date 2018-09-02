@@ -12,7 +12,6 @@ interface IEntity {
     val rowSelected: IEntityRow?
 
     fun getRowByKey(key: String): IEntityRow?
-    fun selectRowByKey(row: IEntityRow)
     fun deselectRows()
 
     enum class EntityType {

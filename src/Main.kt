@@ -112,19 +112,19 @@ fun main(args: Array<String>) {
     val frameColorColumn = listOf(KeyColumn("ColorKey", "Id colore"), StringColumn("Descrizione", "Descrizione colore"))
     val keyColumns = listOf(bykesColumn.first(), frameColorColumn.first()) as List<KeyColumn>
 
-    val bykes = ListEntity(
-            "Bykes",
-            "Tipologia di biciclette",
-            bykesColumn,
-            getBykesRow(bykesColumn)
-    )
+    val bykes = ListEntity.Builder()
+            .withName("Bykes")
+            .withDescription("Tipologia di bicicletta")
+            .withColumns(bykesColumn)
+            .withRows(getBykesRow(bykesColumn))
+            .build()
 
-    val frameColor = ListEntity(
-            "FrameColor",
-            "Tipo di colore",
-            frameColorColumn,
-            getFrameColorRow(frameColorColumn)
-    )
+    val frameColor = ListEntity.Builder()
+            .withName("FrameColor")
+            .withDescription("Tipo di colore")
+            .withColumns(frameColorColumn)
+            .withRows(getFrameColorRow(frameColorColumn))
+            .build()
 
     val decisionRule = DecisionRule(
             "Model-FrameColor",
